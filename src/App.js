@@ -3,11 +3,14 @@ import Header from "./Header";
 import Lessons from "./Lessons";
 import HomePage from "./HomePage";
 import LoginForm from "./LoginForm";
-import auth from "./firebase";
+import { auth } from "./firebase";
+import AnimationPage from "./AnimationPage";
+import About from "./About";
 
 function App() {
   const [showLoginForm, setShowLoginForm] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [pageState, setPageState] = useState(0);
   const [user, setUser] = useState(null);
 
   function handleLoginClick({ key }) {
@@ -33,16 +36,19 @@ function App() {
 
     console.log(isLoggedIn)
   });
-
+  
   return (
     <>
       <div className='bg-background-secondary w-screen h-screen absolute left-0 right-0'>
-        <Header setShowLoginForm={setShowLoginForm} isLoggedIn={isLoggedIn} user={user} setIsLoggedIn={setIsLoggedIn} />
-        {!isLoggedIn ? <HomePage setShowLoginForm={setShowLoginForm} /> : <Lessons />}
+        <Header setShowLoginForm={setShowLoginForm} isLoggedIn={isLoggedIn} user={user} setIsLoggedIn={setIsLoggedIn} setPageState={setPageState} />
+        {(pageState === 0 || !isLoggedIn) && <HomePage />}
+        {pageState === 1 && isLoggedIn && <Lessons />}
+        {pageState === 2 && <About />}
       </div>
       {showLoginForm && <LoginForm />}
     </>
   );
+  
 }
 
 export default App;

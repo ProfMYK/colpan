@@ -23,6 +23,8 @@ module.exports = {
         transparent: 'transparent',
         bullshit: '#171717BB',
         white: '#FFFFFF',
+        secondaryDark: '#a766e8',
+        primaryDark: '#f2ed68'
     },
     fontFamily: {
         sans: ['"Roboto"', 'sans-serif'],
