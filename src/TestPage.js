@@ -4,6 +4,7 @@ import Cevaplar from "./Cevaplar";
 
 function TestPage(props) {
   let [state, setState] = useState(0);
+  let [index, setIndex] = useState(0);
   function end() {
     setState(1);
   }
@@ -33,6 +34,7 @@ function TestPage(props) {
   console.log("questions: ", questions)
 
   let [answers, setAnswers] = useState([-1,-1,-1,-1,-1])
+  console.log("state: ", state)
 
   return (
     <>
@@ -46,9 +48,21 @@ function TestPage(props) {
             answers={answers}
             setAnswers={setAnswers}
             end={end}
+            setState={setState}
           ></Question>
         )}
-        {state === 1 && <Cevaplar answers={answers} rightAnswers={rightAnswers} riyalEnd={riyalEnd} solutions={props.card.solutions} />}
+        {state === 1 && (
+          <Cevaplar
+            answer={answers}
+            rightAnswers={rightAnswers}
+            riyalEnd={riyalEnd}
+            solutions={props.card.solutions}
+            index={cq-1}
+            image={questions[cq-1].image}
+            setState={setState}
+            end={riyalEnd}
+          />
+        )}
       </div>
     </>
   );

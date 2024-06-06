@@ -1,5 +1,5 @@
 function Cevaplar(props) {
-  let {answers, rightAnswers, riyalEnd, solutions} = props;
+  let {solutions, image, index, setState, end} = props;
 
   const turn = {
     0: "A",
@@ -9,51 +9,29 @@ function Cevaplar(props) {
     4: "E",
   }
 
+  function devam() {
+    if (index+1 > 4) {
+      end()
+      console.log("asdakdsf")
+    } else {
+      setState(0);
+      console.log("asd")
+    }
+  }
+
   console.log(props)
 
   return (
     <div className="h-screen flex gap-10 flex-col">
-      <div className="w-screen p-10 h-[70vh] flex flex-row gap-10">
-        <div className="h-[70vh] w-[20%] grid grid-rows-5 grid-cols-2 gap-2 grid-flow-col">
-          {answers.map((answer, index) => (
-            <div
-              className={
-                (answer === rightAnswers[index] && "bg-test-2") +
-                " " +
-                (answer !== rightAnswers[index] && "bg-test-1") +
-                " text-center p-10 text-3xl rounded-md"
-              }
-            >
-              {turn[answer]}
-            </div>
-          ))}
-          {rightAnswers.map((answer, index) => (
-            <div
-              className={
-                (answer === answers[index] && "bg-test-2") +
-                " " +
-                (answer !== answers[index] && "bg-test-1") +
-                " text-center p-10 text-3xl rounded-md"
-              }
-            >
-              {turn[answer]}
-            </div>
-          ))}
-        </div>
-        <div className="h-[70vh] w-[80%] grid grid-rows-5 grid-cols-1 gap-2 grid-flow-col">
-          {solutions.map((solution, index) => (
-            <div className={"bg-primary text-left p-5 text-md rounded-xl"}>
-              {solution}
-            </div>
-          ))}
-        </div>
+      <div className="h-[10%] w-screen flex justify-between px-5 my-5">
+        <button className="h-full w-[100%] bg-primary rounded-md hover:bg-primaryDark transition-all duration-300" onClick={devam}>Devam</button>
       </div>
-      <button
-        className="w-[96%] h-[10vh] bg-secondary text-5xl font-serif ml-10 mt-5 rounded-xl"
-        onClick={riyalEnd}
-      >
-        BITIR
-      </button>
+      <div className="h-[60%] w-screen flex items-center justify-center p-10 my-5">
+        <img src={image} width={(image === "https://firebasestorage.googleapis.com/v0/b/teknofest-colpan.appspot.com/o/photos%2Fanim1soru1cevapC.jpeg?alt=media&token=a8863bdf-bbe6-4c28-a360-c50051ff8c77" && " 28% ") || (image !== "https://firebasestorage.googleapis.com/v0/b/teknofest-colpan.appspot.com/o/photos%2Fanim1soru1cevapC.jpeg?alt=media&token=a8863bdf-bbe6-4c28-a360-c50051ff8c77" && " 50% ")} className="rounded-xl"/>
+      </div>
+      <div className="h-[10%] w-screen flex gap-6 px-5">
+        {solutions[index]}
+      </div>
     </div>
   );
 }
