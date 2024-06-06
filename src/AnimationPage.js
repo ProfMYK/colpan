@@ -2,7 +2,7 @@ import ReactPlayer from "react-player";
 
 function AnimationPage(props) {
   function goBack () {
-    props.setToggle(1);
+    props.setToggle(3);
   }
 
   console.log(props.url);
@@ -16,7 +16,7 @@ function AnimationPage(props) {
         height="100vh"
         url={props.url}
       />
-      <button className="bg-test-1 text-2xl font-serif font-bold w-[10.3vw] h-full" onClick={goBack}>GERI</button>
+      <button className="bg-test-1 text-2xl font-serif font-bold w-[10.3vw] h-full" onClick={goBack}>TEST</button>
       </div>
     </>
   );

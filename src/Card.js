@@ -1,7 +1,7 @@
 import './card.css'
 
 function Card(props) {
-  let { description, image, title, views, description_long, videoURL, cardID } = props;
+  let { description, image, title, views, description_long, videoURL, cardID, questions, solutions } = props;
 
   function handleStartButton() {
     console.log("pressed " + title)
@@ -12,6 +12,8 @@ function Card(props) {
       videoURL: videoURL,
       id: cardID, 
       views: views,
+      questions: questions,
+      solutions: solutions,
     })
   }
 
@@ -21,7 +23,7 @@ function Card(props) {
       <div className="w-full h-[60%] flex items-start justify-center flex-col p-5 gap-3">
         <h1 className="text-foreground-primary text-base font-bold">{views} <snap className="text-foreground-secondary font-normal">izlenme</snap></h1>
         <h1 className="text-foreground-primary text-3xl font-bold font-serif">{title}</h1>
-        <p className="text-foreground-secondary text-xl">{description}</p>
+        <p className="text-foreground-secondary text-md">{description}</p>
         <button className="w-[50%] h-[50px] bg-primary text-foreground-secondary text-xl font-semibold rounded-xl shadow-lg transition-all hoverEffect" onClick={handleStartButton}>Başla</button>
       </div>
     </div>
