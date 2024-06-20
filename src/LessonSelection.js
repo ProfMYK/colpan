@@ -20,7 +20,7 @@ function LessonSelection(props) {
   []
   )
   return (
-    <div className="w-screen h-full">
+    <div className="w-screen h-[94%]">
       <SearchBar />
       <Cards cards={cards} setToggle={props.setToggle} setCard={props.setCard} />
     </div>

@@ -41,7 +41,7 @@ function App() {
     <>
       <div className='bg-background-secondary w-screen h-screen absolute left-0 right-0'>
         <Header setShowLoginForm={setShowLoginForm} isLoggedIn={isLoggedIn} user={user} setIsLoggedIn={setIsLoggedIn} setPageState={setPageState} />
-        {(pageState === 0 || !isLoggedIn) && <HomePage />}
+        {(pageState === 0 || !isLoggedIn) && <HomePage setShowLoginForm={setShowLoginForm} isLoggedIn={isLoggedIn} setPageState={setPageState} />}
         {pageState === 1 && isLoggedIn && <Lessons />}
         {pageState === 2 && <About />}
       </div>

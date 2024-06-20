@@ -11,10 +11,8 @@ function TestPage(props) {
 
   function riyalEnd() {
     props.setState(1)
-    console.log("debug")
   }
 
-  console.log(props)
   const questions_old = props.card.questions;
   let questions = []
   let rightAnswers = [];
@@ -31,14 +29,11 @@ function TestPage(props) {
 
   let [cq, setCq] = useState(0);
 
-  console.log("questions: ", questions)
-
   let [answers, setAnswers] = useState([-1,-1,-1,-1,-1])
-  console.log("state: ", state)
 
   return (
     <>
-      <div className="h-screen w-screen">
+      <div className="h-[94%] w-screen">
         {state === 0 && (
           <Question
             image={questions[cq].image}
@@ -47,7 +42,7 @@ function TestPage(props) {
             cq={cq}
             answers={answers}
             setAnswers={setAnswers}
-            end={end}
+            end={riyalEnd}
             setState={setState}
           ></Question>
         )}

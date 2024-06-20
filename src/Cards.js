@@ -19,6 +19,7 @@ function Cards (props) {
           cardID={card.id}
           questions={card.questions}
           solutions={card.solutions}
+          thumbnail={card.thumbnail}
         />
       ))}
     </div>
