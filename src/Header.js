@@ -20,6 +20,10 @@ function Header(props) {
     props.setPageState(1);
   }
 
+  function handleMeraklisinaClick() {
+    props.setPageState(3);
+  }
+
   function handleAboutClick() {
     props.setPageState(2);
   }
@@ -29,7 +33,8 @@ function Header(props) {
       <div className="text-2xl font-bold text-foreground-primary ml-5">Colpan</div>
       <div className="flex items-center justify-center gap-10">
         <a href="#" className="text-foreground-secondary hover:underline text-sm transition-all" onClick={handleHomePageClick}>Anasayfa</a>
-        <a href="#" className="text-foreground-secondary hover:underline text-sm transition-all" onClick={handleLessonsClick}>Animasyonlar</a>
+        <a href="#" className="text-foreground-secondary hover:underline text-sm transition-all" onClick={handleLessonsClick}>Moduller</a>
+        <a href="#" className="text-foreground-secondary hover:underline text-sm transition-all" onClick={handleMeraklisinaClick}>Meraklısına</a>
         <a href="#" className="text-foreground-secondary hover:underline text-sm transition-all" onClick={handleAboutClick}>Hakkında</a>
         <a href="#" className="text-foreground-secondary hover:underline text-sm transition-all">Bize Ulaşın</a>
       </div>

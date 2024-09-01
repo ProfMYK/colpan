@@ -3,6 +3,7 @@ import Header from "./Header";
 import Lessons from "./Lessons";
 import HomePage from "./HomePage";
 import LoginForm from "./LoginForm";
+import Meraklisinalar from "./Meraklisinalar";
 import { auth } from "./firebase";
 import AnimationPage from "./AnimationPage";
 import About from "./About";
@@ -44,7 +45,7 @@ function App() {
         {(pageState === 0 || !isLoggedIn) && <HomePage setShowLoginForm={setShowLoginForm} isLoggedIn={isLoggedIn} setPageState={setPageState} />}
         {pageState === 1 && isLoggedIn && <Lessons />}
         {pageState === 2 && <About />}
-        {pageState === 3 && <About />}
+        {pageState === 3 && <Meraklisinalar />}
       </div>
       {showLoginForm && <LoginForm />}
     </>
