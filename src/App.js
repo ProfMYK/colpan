@@ -44,6 +44,7 @@ function App() {
         {(pageState === 0 || !isLoggedIn) && <HomePage setShowLoginForm={setShowLoginForm} isLoggedIn={isLoggedIn} setPageState={setPageState} />}
         {pageState === 1 && isLoggedIn && <Lessons />}
         {pageState === 2 && <About />}
+        {pageState === 3 && <About />}
       </div>
       {showLoginForm && <LoginForm />}
     </>

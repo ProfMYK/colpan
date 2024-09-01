@@ -10,7 +10,7 @@ function TestPage(props) {
   }
 
   function riyalEnd() {
-    props.setState(1)
+    props.setState(0)
   }
 
   const questions_old = props.card.questions;
@@ -27,8 +27,7 @@ function TestPage(props) {
     questions.push(a)
   }
 
-  let [cq, setCq] = useState(0);
-
+  let cq = props.cq;
   let [answers, setAnswers] = useState([-1,-1,-1,-1,-1])
 
   return (
@@ -38,7 +37,6 @@ function TestPage(props) {
           <Question
             image={questions[cq].image}
             answer={questions[cq].answer}
-            setCq={setCq}
             cq={cq}
             answers={answers}
             setAnswers={setAnswers}
@@ -52,8 +50,8 @@ function TestPage(props) {
             rightAnswers={rightAnswers}
             riyalEnd={riyalEnd}
             solutions={props.card.solutions}
-            index={cq-1}
-            image={questions[cq-1].image}
+            index={cq}
+            image={questions[cq].image}
             setState={setState}
             end={riyalEnd}
           />

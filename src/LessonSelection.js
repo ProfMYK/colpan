@@ -22,7 +22,7 @@ function LessonSelection(props) {
   return (
     <div className="w-screen h-[94%]">
       <SearchBar />
-      <Cards cards={cards} setToggle={props.setToggle} setCard={props.setCard} />
+      <Cards cards={cards} setToggle={props.setToggle} setCard={props.setCard} setCq={props.setCq} />
     </div>
   );
 }

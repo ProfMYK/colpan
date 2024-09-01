@@ -4,7 +4,7 @@ function Cards (props) {
   const { cards } = props;
   console.log("cards:", cards)
   return (
-    <div className="w-screen h-auto grid grid-cols-6 px-5">
+    <div className="w-screen h-auto flex flex-col px-5">
       {cards.map((card, index) => (
         <Card
           description={card.description}
@@ -20,6 +20,7 @@ function Cards (props) {
           questions={card.questions}
           solutions={card.solutions}
           thumbnail={card.thumbnail}
+          setCq={props.setCq}
         />
       ))}
     </div>

@@ -10,13 +10,7 @@ function Cevaplar(props) {
   }
 
   function devam() {
-    if (index+1 > 4) {
-      end()
-      console.log("asdakdsf")
-    } else {
-      setState(0);
-      console.log("asd")
-    }
+    end()
   }
 
   console.log(props)

@@ -11,12 +11,14 @@ function Lessons() {
   console.log(card)
   console.log("state", state)
 
+  const [cq, setCq] = useState(0);
+
   return (
     <>
-      {state === 0 && <LessonSelection setToggle={setToggle} setCard={setCard} />}
+      {state === 0 && <LessonSelection setToggle={setToggle} setCard={setCard} setCq={setCq} />}
       {state === 1 && <LessonPage setToggle={setToggle} card={card} /> }
       {state === 2 && <AnimationPage setToggle={setToggle} url={card.videoURL} />}
-      {state === 3 && <TestPage card={card} setState={setToggle} />}
+      {state === 3 && <TestPage card={card} setState={setToggle} cq={cq}/>}
     </>
   )
 }

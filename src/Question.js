@@ -5,10 +5,9 @@ function Question(props) {
   let [ca, setCa] = useState(-1);
 
   function next() {
-    setCq(cq + 1);
     if (ca !== answer) {
       setState(1);
-    } else if (cq === 4) {
+    } else {
       end();
     }
     setCa(-1);
