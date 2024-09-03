@@ -12,6 +12,7 @@
     "react-pdf": "^9.1.0",
     "react-player": "^2.16.0",
     "react-scripts": "5.0.1",
+    "react-unity-webgl": "^9.5.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

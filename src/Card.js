@@ -18,6 +18,21 @@ function Card(props) {
     })
   }
 
+  function handleSimulatorButton() {
+    console.log("pressed " + title)
+    props.setToggle(4)
+    props.setCard({
+      title: title,
+      description_long: description_long,
+      videoURL: videoURL,
+      id: cardID, 
+      views: views,
+      questions: questions,
+      solutions: solutions,
+      thumbnail: thumbnail
+    })
+  }
+
   function handleHover() {
     console.log("Hover")
   }
@@ -111,6 +126,7 @@ function Card(props) {
         <button className="w-[100%] h-[16%] bg-primary text-background-secondary text-xl font-semibold rounded-xl shadow-lg hover:bg-primaryDark transition-all duration-200" onClick={handleQuestionButton3}>Soru 3</button>
         <button className="w-[100%] h-[16%] bg-primary text-background-secondary text-xl font-semibold rounded-xl shadow-lg hover:bg-primaryDark transition-all duration-200" onClick={handleQuestionButton4}>Soru 4</button>
         <button className="w-[100%] h-[16%] bg-primary text-background-secondary text-xl font-semibold rounded-xl shadow-lg hover:bg-primaryDark transition-all duration-200" onClick={handleQuestionButton5}>Soru 5</button>
+        {title === "Atışlar" && <button className="w-[100%] h-[16%] bg-primary text-background-secondary text-xl font-semibold rounded-xl shadow-lg hover:bg-primaryDark transition-all duration-200" onClick={handleSimulatorButton}>Simülasyon</button>}
       </div>
     </div>
   );
